@@ -34,16 +34,16 @@ def say_species
   "I am a #{@@species}."
 end
 
-def buy_fish(fido)
- @pets[:fishes] << Fish.new(fido)
+def buy_fish(mellowFish)
+ @pets[:fishes] << Fish.new(mellowFish)
 end
 
-def buy_cat(meow)
-@pets[:cats] << Cat.new(meow)
+def buy_cat(suspicious)
+@pets[:cats] << Cat.new(suspicious)
 end
 
-def buy_dog(bulldog)
-@pets[:dogs] << Dog.new(bulldog)
+def buy_dog(bull)
+@pets[:dogs] << Dog.new(bull)
 end
 
 def walk_dogs
@@ -65,26 +65,21 @@ def feed_fish
 end
 
 def sell_pets
-  @pets.each do |kind, pets|
-    pets.each do |pet|
+  @pets.each do |every_animal_key, animals_arrays|
+    animals_arrays.each do |pet|
     # unless pet.mood = 'happy'
     pet.mood = 'nervous'
+    # binding.pry #animal.mood => nervous
    end
-   pets.clear
+   animals_arrays.clear
  end
 end
 
-#   @pets.each do |pet|
-# #    #  # binding.pry
-# #     if pet == @pets[:fishes]
-# #       p pet
-# #    #  binding.pry
-# #    # end
-# #       pet.each do |fish_ate|
-# #           fish_ate == 'happy'
-# #       p pet
-# #     end
-#   end
-#  end
-# end
+def list_pets
+"I have #{@pets[:fishes].count} fish, #{@pets[:dogs].count} dog(s), and #{@pets[:cats].count} cat(s)."
+ #  pets.each do |every_animal_key, animals_arrays|
+ #   puts "I have #{animals_arrays.count} #{every_animal_key}, and #{animals} #{every_animal_key}, #{animals_arrays.count} #{every_animal_key} ."
+ #    # binding.pry
+ # end
+ #  end
 end
